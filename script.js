@@ -98,8 +98,8 @@ const dict = {
 const TUTOR_COVER_IMAGE = "img-01.jpg";
 
 const IMG1 = "img-02.jpg";
-const IMG2 = "img-03.jpg";
-const IMG3 = "img-04.jpg";
+const IMG2 = "img-03.png";
+const IMG3 = "img-04.png";
 const IMG4 = "img-05.jpg";
 const IMG5 = "img-06.jpg";
 const IMG6 = "img-07.jpg";
