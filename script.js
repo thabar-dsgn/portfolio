@@ -20,7 +20,7 @@ const dict = {
     locked_label: "restrito",
     locked_hint: "acesso sob senha",
     about_kicker: "Sobre",
-    about_bio: "Sou Thaís Barbosa, Staff Product Designer com mais de 13 anos desenhando produtos digitais end-to-end para fintechs, saúde e educação. Hoje lidero o design do Tutor, o assistente de IA da Hotmart Club, usando Claude e Figma Make no dia a dia. Também sou mentora na ADPList.",
+    about_bio: "Sou Thaís Santos, Staff Product Designer com mais de 13 anos desenhando produtos digitais end-to-end para fintechs, saúde e educação. Hoje lidero o design do Tutor, o assistente de IA da Hotmart Club, usando Claude e Figma Make no dia a dia. Também sou mentora na ADPList.",
     about_stat1_n: "13+",
     about_stat1_l: "anos de experiência",
     about_stat2_n: "06",
@@ -65,7 +65,7 @@ const dict = {
     locked_label: "restricted",
     locked_hint: "password protected",
     about_kicker: "About",
-    about_bio: "I'm Thaís Barbosa, a Staff Product Designer with 13+ years designing end-to-end digital products for fintechs, health and education. I currently lead design for Tutor, Hotmart Club's AI assistant, using Claude and Figma Make daily. I also mentor on ADPList.",
+    about_bio: "I'm Thaís Santos, a Staff Product Designer with 13+ years designing end-to-end digital products for fintechs, health and education. I currently lead design for Tutor, Hotmart Club's AI assistant, using Claude and Figma Make daily. I also mentor on ADPList.",
     about_stat1_n: "13+",
     about_stat1_l: "years of experience",
     about_stat2_n: "06",
@@ -1685,7 +1685,7 @@ function setLang(next) {
 /* Init                                                                 */
 /* ------------------------------------------------------------------ */
 
-document.getElementById("footerYear").textContent = "© " + new Date().getFullYear() + " Thaís Barbosa";
+document.getElementById("footerYear").textContent = "© " + new Date().getFullYear() + " Thaís Santos";
 
 applyI18n();
 renderLogos();
