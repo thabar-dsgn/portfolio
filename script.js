@@ -131,6 +131,7 @@ const PARTNER_DASHBOARD_IMG = "img-23.png";
 CASE_IMAGES.push(PARTNER_DASHBOARD_IMG);
 const UI_KIT_IMG = "img-24.png";
 CASE_IMAGES.push(UI_KIT_IMG);
+const ABOUT_GALLERY_IMAGES = ["img-25.jpg", "img-26.jpg", "img-27.jpg", "img-28.jpg", "img-29.jpg", "img-30.jpg", "img-31.jpg", "img-32.jpg"];
 const projects = [
   { id: "tutor", file: "tutor.app", company: "Hotmart", year: "2026", isProtected: false, gated: true, coverImage: TUTOR_COVER_IMAGE, thumb: TUTOR_THUMB,
     title: { pt: "Tutor IA", en: "Tutor AI" },
@@ -1359,11 +1360,14 @@ function wireRelatedProjectClicks() {
 }
 
 let lightboxIndex = null;
+let lightboxImages = CASE_IMAGES;
 
-function openLightbox(idx) {
-  if (idx == null || idx < 0 || idx >= CASE_IMAGES.length) return;
+function openLightbox(idx, images) {
+  const list = images || CASE_IMAGES;
+  if (idx == null || idx < 0 || idx >= list.length) return;
+  lightboxImages = list;
   lightboxIndex = idx;
-  document.getElementById("lightboxImg").src = CASE_IMAGES[lightboxIndex];
+  document.getElementById("lightboxImg").src = lightboxImages[lightboxIndex];
   const lb = document.getElementById("lightbox");
   lb.classList.remove("hidden");
   lb.classList.add("flex");
@@ -1377,13 +1381,19 @@ function closeLightbox() {
 
 function lightboxStep(dir) {
   if (lightboxIndex == null) return;
-  lightboxIndex = (lightboxIndex + dir + CASE_IMAGES.length) % CASE_IMAGES.length;
-  document.getElementById("lightboxImg").src = CASE_IMAGES[lightboxIndex];
+  lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+  document.getElementById("lightboxImg").src = lightboxImages[lightboxIndex];
 }
 
-function wireLightboxClicks() {
-  document.querySelectorAll("[data-lightbox-idx]").forEach((img) => {
-    img.addEventListener("click", () => openLightbox(Number(img.getAttribute("data-lightbox-idx"))));
+function wireLightboxClicks(root = document) {
+  root.querySelectorAll("[data-lightbox-idx]").forEach((img) => {
+    if (img.dataset.lightboxWired) return;
+    img.dataset.lightboxWired = "1";
+    img.addEventListener("click", () => {
+      const group = img.getAttribute("data-lightbox-group");
+      const images = group === "about" ? ABOUT_GALLERY_IMAGES : CASE_IMAGES;
+      openLightbox(Number(img.getAttribute("data-lightbox-idx")), images);
+    });
   });
 }
 
@@ -1692,5 +1702,6 @@ renderLogos();
 renderProjectsGrid();
 startCycle();
 observeReveals();
+wireLightboxClicks();
 updateStack();
 lucide.createIcons();
