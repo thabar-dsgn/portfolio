@@ -91,8 +91,12 @@
   }
   .about-gallery .gallery-tile:hover {
     transform: scale(1.06) rotate(0deg) !important;
-    z-index: 9 !important;
+    z-index: 20 !important;
     box-shadow: 0 20px 40px -10px rgba(0,0,0,.5), 0 4px 12px rgba(0,0,0,.3);
+  }
+  .about-gallery .gallery-tile.featured {
+    border-color: var(--pop);
+    box-shadow: 0 20px 44px -8px rgba(0,0,0,.55), 0 4px 12px rgba(0,0,0,.3), 0 0 0 2px var(--pop);
   }
   @media (prefers-reduced-motion: reduce) {
     .about-gallery .gallery-tile { transition: none !important; opacity: 1 !important; transform: rotate(var(--rot,0deg)) !important; }

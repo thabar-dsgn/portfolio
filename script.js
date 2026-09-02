@@ -131,7 +131,7 @@ const PARTNER_DASHBOARD_IMG = "img-23.png";
 CASE_IMAGES.push(PARTNER_DASHBOARD_IMG);
 const UI_KIT_IMG = "img-24.png";
 CASE_IMAGES.push(UI_KIT_IMG);
-const ABOUT_GALLERY_IMAGES = ["img-25.jpg", "img-26.jpg", "img-27.jpg", "img-28.jpg", "img-29.jpg", "img-30.jpg", "img-31.jpg", "img-32.jpg"];
+const ABOUT_GALLERY_IMAGES = ["img-25.jpg", "img-26.jpg", "img-27.jpg", "img-28.jpg", "img-29.jpg", "img-30.jpg", "img-31.jpg", "img-32.jpg", "img-33.jpg"];
 const projects = [
   { id: "tutor", file: "tutor.app", company: "Hotmart", year: "2026", isProtected: false, gated: true, coverImage: TUTOR_COVER_IMAGE, thumb: TUTOR_THUMB,
     title: { pt: "Tutor IA", en: "Tutor AI" },
